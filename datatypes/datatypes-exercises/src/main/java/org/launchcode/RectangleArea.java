@@ -10,7 +10,7 @@ public class RectangleArea {
         System.out.println("Enter width:");
         Double width = input.nextDouble();
 
-        Double area = length * width;
+        double area = length * width;
         System.out.println("Your rectangle area is " + area);
     }
 }

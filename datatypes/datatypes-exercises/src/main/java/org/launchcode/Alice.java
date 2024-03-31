@@ -18,7 +18,7 @@ public class Alice {
         System.out.println("Enter search term:");
         String searchTerm = input.nextLine();
         Integer index = firstSentence.indexOf(searchTerm);
-        Integer length = searchTerm.length();
+        int length = searchTerm.length();
         System.out.println(!index.equals(-1));
         System.out.println("Your search term first appears at index " + index + ". Your term is " + length + " characters long.");
         String modifiedSentence = firstSentence.replace(searchTerm, "");
