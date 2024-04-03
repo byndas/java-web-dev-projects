@@ -14,14 +14,15 @@ public class Alice {
                     " ‘and what is the use of a book,’ thought Alice" +
                     " ‘without pictures or conversation?’";
 
+        String aliceLowerCase = firstSentence.toLowerCase();
         Scanner input = new Scanner(System.in);
         System.out.println("Enter search term:");
-        String searchTerm = input.nextLine();
-        Integer index = firstSentence.indexOf(searchTerm);
+        String searchTerm = input.nextLine().toLowerCase();
+        Integer index = aliceLowerCase.indexOf(searchTerm);
         int length = searchTerm.length();
         System.out.println(!index.equals(-1));
         System.out.println("Your search term first appears at index " + index + ". Your term is " + length + " characters long.");
-        String modifiedSentence = firstSentence.replace(searchTerm, "");
+        String modifiedSentence = aliceLowerCase.replace(searchTerm, "");
         System.out.println(modifiedSentence);
     }
 }
