@@ -33,7 +33,8 @@ public class ArrayPractice {
                 "I will not eat them with a mouse.";
         // split string by no space
         String[] strSplit = phrase.split(" ");
-        // return string as ArrayList
+        // return strSplit as ArrayList
+        // array > list > arrayList
         return new ArrayList<String>( Arrays.asList(strSplit) );
     }
 }
