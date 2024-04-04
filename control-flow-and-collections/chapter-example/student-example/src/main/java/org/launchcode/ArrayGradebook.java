@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ArrayGradebook {
     public static void main(String[] args) {
-        // Allow for at most 30 students
+        // allows 30 students max
         int maxStudents = 30;
 
         String[] students = new String[maxStudents];
@@ -16,7 +16,7 @@ public class ArrayGradebook {
 
         System.out.println("Enter your students (or ENTER to finish):");
 
-        // Get student names
+        // gets student names
         do {
             newStudent = input.nextLine();
 
@@ -27,14 +27,14 @@ public class ArrayGradebook {
 
         } while(!newStudent.equals(""));
 
-        // Get student grades
+        // gets student grades
         for (int i = 0; i < numStudents; i++) {
             System.out.print("Grade for " + students[i] + ": ");
             double grade = input.nextDouble();
             grades[i] = grade;
         }
 
-        // Print class roster
+        // prints class roster
         System.out.println("\nClass roster:");
         double sum = 0.0;
 

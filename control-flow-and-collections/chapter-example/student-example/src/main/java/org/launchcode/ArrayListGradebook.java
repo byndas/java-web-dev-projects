@@ -12,7 +12,7 @@ public class ArrayListGradebook {
 
         System.out.println("Enter your students (or ENTER to finish):");
 
-        // Get student names
+        // gets student names
         do {
             newStudent = input.nextLine();
 
@@ -22,14 +22,14 @@ public class ArrayListGradebook {
 
         } while(!newStudent.equals(""));
 
-        // Get student grades
+        // gets student grades
         for (String student : students) {
             System.out.print("Grade for " + student + ": ");
             Double grade = input.nextDouble();
             grades.add(grade);
         }
 
-        // Print class roster
+        // prints class roster
         System.out.println("\nClass roster:");
         double sum = 0.0;
 
