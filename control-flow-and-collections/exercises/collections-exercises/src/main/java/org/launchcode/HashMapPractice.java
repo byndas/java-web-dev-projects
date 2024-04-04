@@ -10,6 +10,7 @@ public class HashMapPractice {
         String newStudent;
         Scanner input = new Scanner(System.in);
         HashMap<Integer, String> classRoster = new HashMap<>();
+
         System.out.println("Enter student IDs & names (press ENTER to end process):");
         // collects user-input student names & IDs
         do {
@@ -29,7 +30,7 @@ public class HashMapPractice {
         input.close();
         // announces class roster
         System.out.println("\nClass roster:");
-        // prints student name & ID from classRoster hashmap
+        // prints student name & ID from for-in loop of classRoster hashmap
         for (Map.Entry<Integer, String> student : classRoster.entrySet()) {
             System.out.println(student.getValue() + "'s ID: " + student.getKey());
         }

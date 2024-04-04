@@ -15,9 +15,11 @@ public class ArrayListPractice {
         Scanner scanner = new Scanner(System.in);
         int numChars = scanner.nextInt();
 
-        String[] wordArr = {"snake", "cake", "break", "fake"};
-        ArrayList<String> wordList = new ArrayList<String>();
-        for (String word : wordArr) { wordList.add(word); }
+//        String[] wordArr = {"snake", "cake", "break", "fake"};
+
+        ArrayList<String> wordList = ArrayPractice.getStrArrList();
+
+//        for (String word : wordArr) { wordList.add(word); }
         printWordList(wordList, numChars);
     }
 
