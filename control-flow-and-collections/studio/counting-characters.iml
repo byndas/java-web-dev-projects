@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="counting-characters" external.linked.project.path="$MODULE_DIR$/counting-characters" external.root.project.path="$MODULE_DIR$/counting-characters" external.system.id="GRADLE" external.system.module.group="org.launchcode" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/studio/counting-characters">
+      <excludeFolder url="file://$MODULE_DIR$/studio/counting-characters/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/studio/counting-characters/build" />
+    </content>
+    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,4 @@
+$uper Bonu$ Note:
+This is a hard one.
+We won’t talk about reading from files in Java in this course,
+so be ready for a tough challenge if you accept this mission.
