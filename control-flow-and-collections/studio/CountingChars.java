@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Scanner; // Import the Scanner class to read text files
 
 import java.io.File;  // Import the File class
- import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.io.FileNotFoundException;  // Import this class to handle errors
 
 public class CountingChars {
     public static void main(String[] args) {
@@ -37,6 +37,7 @@ public class CountingChars {
         for (char letter : charsInStr) {
             // exclude non-alphabetic characters
 //            if (letter) {} // which method to use here?
+
             // populate hashmap with charCount case-insensitive
             String strLetter = String.valueOf(letter).toLowerCase();
             // if new char, add to hashmap
@@ -48,6 +49,10 @@ public class CountingChars {
                 charCountMap.put(strLetter, countValue+1);
             }
         }
+        // for (Map.Entry<character, Integer> count :charCountMap.entrySet()){
+        //    system.out.println(count.getKey() + " : " + count.getValue());
+        // }
         System.out.println(charCountMap);
     }
 }
+
