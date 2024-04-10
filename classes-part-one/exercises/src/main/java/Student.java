@@ -4,20 +4,27 @@ public class Student {
         private int numberOfCredits = 0;
         private double gpa = 0.0;
 
-        public void setName(String name) {
-                this.name = name;
+        public Student(String aName, int aStudentId, int aNumberOfCredits, double aGpa) {
+                name = aName;
+                studentId = aStudentId;
+                numberOfCredits = aNumberOfCredits;
+                gpa = aGpa;
         }
 
-        public void setStudentId(int studentId) {
-                this.studentId = studentId;
+        public void setName(String aName) {
+                name = aName;
         }
 
-        public void setGpa(double gpa) {
-                this.gpa = gpa;
+        public void setStudentId(int aStudentId) {
+                studentId = aStudentId;
         }
 
-        private void setNumberOfCredits(int numberOfCredits) {
-                this.numberOfCredits = numberOfCredits;
+        public void setGpa(double aGpa) {
+                gpa = aGpa;
+        }
+
+        private void setNumberOfCredits(int aNumberOfCredits) {
+                numberOfCredits = aNumberOfCredits;
         }
 
         public String getName() {
