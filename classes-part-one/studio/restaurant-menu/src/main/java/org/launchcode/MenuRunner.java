@@ -1,8 +1,11 @@
 package org.launchcode;
 
+import java.util.Date;
+
 public class MenuRunner {
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        Date date = new Date();
+        Menu menu = new Menu("Jolly Dervish", date);
     }
 }
