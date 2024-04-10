@@ -4,6 +4,8 @@ package org.launchcode;
 //java.util.Date;
 
 public class Menu {
+    // needs constructor!
+
     // instantiates three MenuItem classes
     MenuItem hummus = new MenuItem("hummus", 5.00, "hummus description", "appetizer", false);
     MenuItem gyro = new MenuItem("gyro", 10.00, "gyro description", "main course",  false);

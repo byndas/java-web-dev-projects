@@ -7,6 +7,9 @@ public class MenuItem {
     private String category;
     private boolean isNew;
 
+    // needs constructor!
+
+
     public String getName() {
         return name;
     }
