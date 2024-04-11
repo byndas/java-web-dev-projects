@@ -7,11 +7,14 @@ public class Course {
     private Teacher instructor;
     private ArrayList<Student> enrolledStudents;
 
-    // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather than
-    //  just the class fields.
+//    public String toString() {
+        // return a well-formatted String, not merely class fields
 
+//    }
 
-    // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
-    //  Course objects equal.
+//    public boolean equals() {
+        // which fields must match for two Course objects to be equal?
+
+//    }
 
 }
