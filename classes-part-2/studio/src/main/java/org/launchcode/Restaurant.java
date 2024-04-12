@@ -22,7 +22,7 @@ public class Restaurant {
 
         //  print updated menuArr & menuItemObj
         System.out.println(menu.getMenuArr().toString());
-        System.out.println(menu.getMenuArr().toString());
+        System.out.println(menu.getLastUpdated().toString());
 
         //  delete a menuItemObj from menuArr
         menu.removeFromMenu(hummus);

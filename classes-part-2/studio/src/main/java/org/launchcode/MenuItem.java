@@ -1,5 +1,7 @@
 package org.launchcode;
 
+import java.util.Objects;
+
 public class MenuItem {
     // private instance fields
     private String name;
@@ -36,5 +38,13 @@ public class MenuItem {
                 "   description: "+description+","+'\n'+
                 "   category: "+category+","+'\n'+
                 "   isNew: "+isNew+'\n'+" }";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Double.compare(price, menuItem.price) == 0 && Objects.equals(description, menuItem.description) && Objects.equals(name, menuItem.name);
     }
 }
