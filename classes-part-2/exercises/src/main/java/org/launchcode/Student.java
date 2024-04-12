@@ -34,7 +34,7 @@ public class Student {
     }
 
     public String studentInfo() {
-        return (this.name + " has a GPA of: " + this.gpa);
+        return (name + " has a GPA of: " + gpa);
     }
 
     public String getGradeLevel() {
@@ -56,8 +56,7 @@ public class Student {
 
     public String toString() {
         // return well-formatted String, not merely class fields
-        String studentReport = String.format("%s is a %s with %d credits and a GPA of %.2f", name, getGradeLevel(), getTotalCredits(), getGpa());
-        return studentReport;
+        return String.format("%s is a %s with %d credits and a GPA of %.2f", name, getGradeLevel(), getTotalCredits(), getGpa());
     }
 
     public boolean equals(Object toBeCompared) {
@@ -81,6 +80,6 @@ public class Student {
 
     public int getTotalCredits() { return totalCredits; }
     private void setTotalCredits(int newTotalCredits) {
-        this.totalCredits = newTotalCredits;
+        totalCredits = newTotalCredits;
     }
 }
