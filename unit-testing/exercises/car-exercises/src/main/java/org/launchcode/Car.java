@@ -12,9 +12,23 @@ public class Car {
         this.make = make;
         this.model = model;
         this.gasTankSize = gasTankSize;
-        // Gas tank level defaults to a full tank
-        this.gasTankLevel = gasTankSize;
+        this.gasTankLevel = gasTankSize; // full tank
         this.milesPerGallon = milesPerGallon;
+    }
+
+    public void drive(double milesToDrive) {
+/*      drive until arrive destination or until fuel empty
+            adjust fuel enough to drive requested distance
+            add miles to odometer  */
+        double maxDistance = this.milesPerGallon * this.gasTankLevel;
+        double milesAbleToTravel = milesToDrive > maxDistance ? maxDistance : milesToDrive;
+        double gallonsUsed = milesAbleToTravel / this.milesPerGallon;
+        this.gasTankLevel = this.gasTankLevel - gallonsUsed;
+        this.odometer += milesAbleToTravel;
+    }
+
+    public void addGas(double gas) {
+        this.setGasTankLevel(gas + this.getGasTankLevel());
     }
 
     public String getMake() {
@@ -46,9 +60,11 @@ public class Car {
     }
 
     public void setGasTankLevel(double gasTankLevel) {
+        if (gasTankLevel > this.getGasTankSize()) {
+            throw new IllegalArgumentException("Can't exceed tank size");
+        }
         this.gasTankLevel = gasTankLevel;
     }
-
     public double getMilesPerGallon() {
         return milesPerGallon;
     }
@@ -60,28 +76,4 @@ public class Car {
     public double getOdometer() {
         return odometer;
     }
-
-    /**
-     * Drive the car an amount of miles. If not enough fuel, drive as far as fuel allows.
-     * Adjust fuel levels based on amount needed to drive the distance requested.
-     * Add miles to odometer.
-     *
-     * @param miles - the miles to drive
-     */
-    public void drive(double miles)
-    {
-        //adjust fuel based on mpg and miles requested to drive
-        double maxDistance = this.milesPerGallon * this.gasTankLevel;
-        /**the double below uses some syntax called the ternary operator.
-         * if the value of miles is greater than the value of maxDistance,
-         * then milesAbleToTravel = maxDistance.
-         * otherwise, if miles is not greater than maxDistance,
-         * then milesAbleToTravel = miles
-         */
-        double milesAbleToTravel = miles > maxDistance ? maxDistance : miles;
-        double gallonsUsed = milesAbleToTravel / this.milesPerGallon;
-        this.gasTankLevel = this.gasTankLevel - gallonsUsed;
-        this.odometer += milesAbleToTravel;
-    }
-
 }
