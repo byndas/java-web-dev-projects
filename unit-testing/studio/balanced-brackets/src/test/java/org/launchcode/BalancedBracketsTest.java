@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 //  correct the class to pass failed tests_
 //  write 12 input examples with their expected boolean return value_
 
+//  since BalancedBrackets only contains static method hasBalancedBrackets,
+//      no need to create an instance to test hasBalancedBrackets()_
+
 class BalancedBracketsTest {
     @Test public void emptyTest() {
         assertEquals(true, true);
