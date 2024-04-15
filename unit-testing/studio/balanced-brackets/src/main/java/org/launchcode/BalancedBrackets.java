@@ -10,6 +10,6 @@ public class BalancedBrackets {
             if (ch == '[') { bracketsNum++; }
             if (ch == ']') { bracketsNum--; }
         }
-        return brackets == 0;
+        return bracketsNum == 0;
     }
 }
