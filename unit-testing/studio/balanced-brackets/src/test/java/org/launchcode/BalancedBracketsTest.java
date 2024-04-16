@@ -2,12 +2,12 @@ package org.launchcode;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-//  write 13 unit tests to find errors in BalancedBrackets,
+//  write many unit tests to find errors in BalancedBrackets,
 //      to guide source code revisions_
 //  use TDD for expected BalancedBrackets class behavior_
 //  how should the class behave?
 //  correct the class to pass failed tests_
-//  write 13 input examples with their expected boolean return value_
+//  write many input examples with their expected boolean return value_
 
 //  since BalancedBrackets only contains static method hasBalancedBrackets,
 //      no need to create an instance to test hasBalancedBrackets()_
@@ -46,6 +46,11 @@ class BalancedBracketsTest {
         String message = "One set of balanced brackets returns true";
         assertTrue(BalancedBrackets.hasBalancedBrackets("[[[]]]", message));
     }
+
+    public static boolean hasBalancedBrackets(String str) {
+        if (str == null || str.isEmpty()) {
+            return false;
+        }
 /////////////////////////////////////////////////////////////////////////////////
     @Test public void oneBracketBeforeCharsFalse() {
         String message = "One set of balanced brackets returns false";
