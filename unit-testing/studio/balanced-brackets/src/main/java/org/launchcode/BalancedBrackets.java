@@ -8,7 +8,10 @@ public class BalancedBrackets {
         int bracketsNum = 0;
         for (char ch : str.toCharArray()) {
             if (ch == '[') { bracketsNum++; }
-            if (ch == ']') { bracketsNum--; }
+            else if (ch == ']') {
+                bracketsNum--;
+                if (bracketsNum < 0) { return false; }
+            }
         }
         return bracketsNum == 0;
     }
