@@ -3,7 +3,7 @@ package org.launchcode;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 public class MultipleChoice extends Question {
 
@@ -27,25 +27,20 @@ public class MultipleChoice extends Question {
 
 	// conditional setter
 	public boolean isCorrectAnswer (int possibleAnswer) {
-		if (possibleAnswer == correctAnswer) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return possibleAnswer == correctAnswer;
 	}
 
 	@Override
 	public int getAnswers() {
 		Scanner answer = new Scanner(System.in);
-		System.out.println("What will your answer be? Enter the number of the option you believe is correct. For example, to select the first option, enter 1");
-		String userAnswer = answer.nextLine();
-		int result = Integer.parseInt(userAnswer);
-		if (isCorrectAnswer(result)) {
-			return 1;
-		}
-		else {
-			return 0;
-		}
+
+		System.out.println(
+				"What is your answer? " +
+						"Enter correct option number. " +
+						"Enter 1 to select first option."
+		);
+		int result = Integer.parseInt(answer.nextLine());
+
+		return isCorrectAnswer(result) ? 1 : 0;
 	}
 }

@@ -2,23 +2,18 @@ package org.launchcode;
 
 import java.util.Scanner;
 
-public class TrueOrFalse extends Question{
+public class TrueOrFalse extends Question {
 
 	private boolean correctAnswer;
 
 	public TrueOrFalse(int pointValue, String text, boolean correctAnswer) {
 		super(pointValue, text);
-		setPointValue(1);
 		this.correctAnswer = correctAnswer;
+		setPointValue(1);
 	}
 
 	public boolean isCorrectAnswer (boolean possibleAnswer) {
-		if (possibleAnswer == correctAnswer) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return possibleAnswer == correctAnswer;
 	}
 
 	@Override
@@ -30,22 +25,9 @@ public class TrueOrFalse extends Question{
 	public int getAnswers() {
 		Scanner answer = new Scanner(System.in);
 		System.out.println("What will your answer be? Type 't' for True and 'f' for False");
-		String userAnswer = answer.nextLine();
-		if (userAnswer.indexOf('t') >= 0) {
-			if (isCorrectAnswer(true)) {
-				return 1;
-			}
-			else {
-				return 0;
-			}
+		if (answer.nextLine().indexOf('t') >= 0) {
+			return isCorrectAnswer(true) ? 1 : 0;
 		}
-		else {
-			if (isCorrectAnswer(false)) {
-				return 1;
-			}
-			else {
-				return 0;
-			}
-		}
+		else { return isCorrectAnswer(false) ? 1 : 0; }
 	}
 }
