@@ -1,5 +1,5 @@
 package org.launchcode;
 
-public class Disc {
+public abstract class Disc {
 
 }
