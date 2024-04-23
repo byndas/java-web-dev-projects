@@ -20,9 +20,12 @@ As with Restaurant Menu studios, draw a diagram
 
 1.  collecting & sorting behaviors common to CDs & DVDs:
 
+METHODS:
 spin,
 store (laser write) data to disc,
 laser read disc data,
+remove info
+
 report loaded data:
     name, capacity, contents, disc type
 
@@ -33,6 +36,7 @@ Which behaviors depend on a type of instance variable?
     for example, spinning behavior requires no field from CD or DVD classes
 
 next, consider with behaviors depend on data stored in a specific object
+
 
 2.  class-specific fields & methods:
 
@@ -49,6 +53,21 @@ for example, CDs & DVDs share a spin method
         spinDisc() belongs to an interface
 
 decide which other behaviors belongs to an interface
+
+INTERFACE:
+spin,
+reading & writing via laser
+
+FIELDS:
+info (title, artist)
+
+
+CLASS:
+CD --> storage, data type, spin rate
+DVD --> storage, data type, spin rate
+
+
+
 
 write how these interface behaviors (methods) differ between CDs & DVDs,
     how must each class override these methods?
