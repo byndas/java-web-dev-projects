@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{styles.css}">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/events/add-event">
+        <input type="text" name="eventName">
+        <input type="text" name="eventDescription">
+        <input type="submit" value="submitButtonText">
+    </form>
+</body>
+</html>
+

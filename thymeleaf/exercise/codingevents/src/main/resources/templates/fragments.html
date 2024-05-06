@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body>
+    <th:block th:fragment="eventList">
+        <table>
+            <tr th:each="event : ${events}">
+                <td th:text="${event.key}"></td>
+                <td th:text="${event.value}"></td>
+                <td>123 Earth Ave, Somewhere</td>
+                <td><img th:src="@{someImg}" alt=""></td>
+            </tr>
+        </table>
+    </th:block>
+</body>
+</html>
