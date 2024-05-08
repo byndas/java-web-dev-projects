@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{styles.css}">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:object="${event}" action="/events/add-event" th:action="@{/events/edit}">
+    <!--        th:field forces input value to be string  -->
+    <!--        th:value takes raw value type as is -->
+    <input type="hidden" th:value="${event.id}" name="eventId">
+<!--    <input type="hidden" th:field="*{event.id}" name="eventId>-->
+    <input type="text" th:field="*{name}">
+    <input type="text" th:field="*{description}">
+    <input type="submit" value="submitButtonText">
+</form>
+</body>
+</html>
