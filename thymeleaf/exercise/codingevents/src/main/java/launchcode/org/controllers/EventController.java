@@ -1,47 +1,75 @@
 package launchcode.org.controllers;
 
+import launchcode.org.data.EventData;
+import launchcode.org.models.Event;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/events")
 public class EventController {
 
-	private Map<String, String> events = new HashMap<>();
+//	private Map<String, String> events = new HashMap<>();
+//	private static List<Event> events = new ArrayList<>();
 
-	@GetMapping("/")
+	@GetMapping("")
 	public String EventsPage(Model model) {
-		events.put("AuTechers","Meetup for coders who love Autechre");
-		events.put("FCC","FreeCodeCamp meetup");
-		events.put("JSmasters", "JS lecture series");
-
-		model.addAttribute("events", events);
+		EventData.add(new Event("AuTechers","Meetup for coders who love Autechre"));
+		EventData.add(new Event("FCC","FreeCodeCamp meetup"));
+		EventData.add(new Event("JSmasters", "JS lecture series"));
+		model.addAttribute("events", EventData.getAll());
 		return "events/index";
 	}
 
 	@GetMapping("/form")
-	public String EventsFormPage() { return "events/form"; }
+	public String EventsFormPage(Model model) {
+		model.addAttribute("event", new Event("", ""));
+		return "events/form";
+	}
 
 	@PostMapping("/add-event")
 	public String submitEvent(
-			@RequestParam String eventName,
-			@RequestParam String eventDescription
+//			@RequestParam String eventName,
+//			@RequestParam String eventDescription
+			@ModelAttribute Event newEvent
 	) {
-		events.put(eventName, eventDescription);
+		EventData.add(newEvent);
+//		EventData.add(new Event(eventName, eventDescription));
+		return "redirect:/events/success";
+	}
+
+	@GetMapping("/delete")
+	public String renderDeleteEventForm(Model model) {
+		model.addAttribute("title", "Delete Event");
+		model.addAttribute("events", EventData.getAll());
+		return "events/delete";
+	}
+
+	@PostMapping("/delete")
+	public String processDeleteEventsForm(
+			// required=false prevents program from breaking
+			//    when form submitted with no checkbox selected
+			@RequestParam(required=false) int[] eventIds
+	) {
+		if (eventIds != null) {
+			for (int id : eventIds) {
+				EventData.remove(id);
+			}
+		}
 		return "redirect:/events/success";
 	}
 
 	@GetMapping("/success")
 	public String SuccessPage(Model model) {
-		model.addAttribute("events", events);
+		model.addAttribute("events", EventData.getAll());
 		return "events/success";
 	}
+
 }
 

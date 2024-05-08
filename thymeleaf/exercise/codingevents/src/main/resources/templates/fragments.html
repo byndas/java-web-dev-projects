@@ -6,12 +6,13 @@
 </head>
 <body>
     <th:block th:fragment="eventList">
+        <h1>LISTING</h1>
         <table>
             <tr th:each="event : ${events}">
-                <td th:text="${event.key}"></td>
-                <td th:text="${event.value}"></td>
+                <td th:text="${event.name}"></td>
+                <td th:text="${event.description}"></td>
                 <td>123 Earth Ave, Somewhere</td>
-                <td><img th:src="@{someImg}" alt=""></td>
+<!--                <td><img th:src="@{someImg}" alt=""></td>-->
             </tr>
         </table>
     </th:block>
